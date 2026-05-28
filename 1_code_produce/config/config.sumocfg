@@ -1,0 +1,22 @@
+<configuration> 
+
+<!-- this is how the base config looks like, but this gets overwritten with the specific route file in evaluation or with dynamic routes in training -->
+
+<input> <!-- gets loaded into the simulation-->
+    <net-file value = "../network/ramp.net.xml" />
+    <route-files value = "../routes/vehicle_types.xml,../routes/routes_mixed.rou.xml" /> <!-- CHANGE HERE FOR EXTREME ROUTES -->
+</input>
+
+<time> <!-- parameter for time in simulation -->
+    <begin value = "0" /> 
+    <end value = "1040" /> <!-- 1000 steps per episode, 40 warm up to load traffic on the networkk-->
+    <step-length value = "1" />
+</time>
+
+
+<processing>
+    <seed value="42" /> <!-- gets overwritten by episode index-->
+    <time-to-teleport value="-1"/> <!-- deactivate teleporting completely -->
+</processing>
+
+</configuration> 

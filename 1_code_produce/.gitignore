@@ -1,0 +1,44 @@
+# ---- generated per-episode configs and routes ----
+config/generated/
+config/generated_rl/
+routes/generated/
+routes/generated_rl/
+
+# ---- generated baseline / RL evaluation results ----
+results/per_episode/
+results/merged/
+results/space_speed/
+results/*.csv
+
+# ---- generated figures ----
+figures/
+
+# ---- RL training runs (checkpoints, logs, live plots) ----
+RLAlgorithms/ppo_runs/
+RLAlgorithms/a3c_runs/
+RLAlgorithms/apexdqn_runs/
+
+# ---- Python cache and build artifacts ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+
+# ---- virtual environments ----
+.venv/
+venv/
+env/
+
+# ---- IDE / editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- macOS ----
+.DS_Store
+
+# ---- Windows ----
+Thumbs.db

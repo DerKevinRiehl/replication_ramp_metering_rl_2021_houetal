@@ -1,0 +1,29 @@
+# Python dependencies for the replication.
+# Tested on Python 3.11 (macOS, anaconda env) and Python 3.11 (Windows Remote Server).
+# Install with: pip install -r requirements.txt
+#
+# Note: SUMO must be installed separately and reachable on the system PATH as
+# `sumo` (and `sumo-gui` if you want the GUI). We installed it manually from
+# https://eclipse.dev/sumo/ (Eclipse SUMO 1.26). The pip packages `sumo` and
+# `traci` below provide the Python bindings used by env.py — they do NOT
+# install the SUMO binary itself.
+
+# --- Core scientific stack ---
+numpy==1.26.4
+pandas>=2.0
+matplotlib>=3.7
+
+# --- SUMO Python bindings (TraCI API) ---
+sumo>=2.3
+traci>=1.20
+
+# --- Reinforcement learning environment interface ---
+gymnasium>=0.26
+
+# --- RL algorithms (PPO, Ape-X DQN, A3C) and distributed rollout workers ---
+# A3C is deprecated in Ray 2.10 and removed in 2.11, so pin below that.
+ray[rllib]>=2.5,<2.10
+torch>=2.0
+
+# --- Progress bars during training ---
+tqdm>=4.65

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-03-25T18:37:55.537889+01:00 by Eclipse SUMO netedit v1_26_0+0267-c0d5244e5ab
+<neteditConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="ramp.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="ramp.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.avoid-overlap value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="0"/>
+    </processing>
+
+    <junctions>
+        <no-internal-links value="true"/>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="0"/>
+    </pedestrian>
+
+</neteditConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" avoidOverlap="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,-54.83,850.00,0.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id="seg1" from="node1" to="node2" priority="1" spreadType="center">
+        <lane id="seg1_0" index="0" disallow="pedestrian" speed="29.06" length="100.00" shape="0.00,-1.60 100.00,-1.60"/>
+        <lane id="seg1_1" index="1" disallow="pedestrian" speed="29.06" length="100.00" shape="0.00,1.60 100.00,1.60"/>
+    </edge>
+    <edge id="seg10" from="node11" to="node6" priority="1" spreadType="center">
+        <lane id="seg10_0" index="0" disallow="pedestrian" speed="17.88" length="63.63" shape="428.78,-23.50 484.27,-5.19"/>
+    </edge>
+    <edge id="seg2" from="node2" to="node3" priority="1" spreadType="center">
+        <lane id="seg2_0" index="0" disallow="pedestrian" speed="29.06" length="100.00" shape="100.00,-1.60 200.00,-1.60"/>
+        <lane id="seg2_1" index="1" disallow="pedestrian" speed="29.06" length="100.00" shape="100.00,1.60 200.00,1.60"/>
+    </edge>
+    <edge id="seg3" from="node3" to="node4" priority="1" spreadType="center">
+        <lane id="seg3_0" index="0" disallow="pedestrian" speed="29.06" length="100.00" shape="200.00,-1.60 300.00,-1.60"/>
+        <lane id="seg3_1" index="1" disallow="pedestrian" speed="29.06" length="100.00" shape="200.00,1.60 300.00,1.60"/>
+    </edge>
+    <edge id="seg4" from="node4" to="node5" priority="1" spreadType="center">
+        <lane id="seg4_0" index="0" disallow="pedestrian" speed="29.06" length="100.00" shape="300.00,-1.60 400.00,-1.60"/>
+        <lane id="seg4_1" index="1" disallow="pedestrian" speed="29.06" length="100.00" shape="300.00,1.60 400.00,1.60"/>
+    </edge>
+    <edge id="seg5" from="node5" to="node6" priority="1" spreadType="center">
+        <lane id="seg5_0" index="0" disallow="pedestrian" speed="29.06" length="87.69" shape="400.00,-1.60 483.70,-1.60"/>
+        <lane id="seg5_1" index="1" disallow="pedestrian" speed="29.06" length="87.69" shape="400.00,1.60 483.70,1.60"/>
+    </edge>
+    <edge id="seg6" from="node6" to="node7" priority="1" spreadType="center">
+        <lane id="seg6_0" index="0" disallow="pedestrian" speed="29.06" length="162.62" acceleration="1" shape="492.06,-3.20 646.00,-3.20"/>
+        <lane id="seg6_1" index="1" disallow="pedestrian" speed="29.06" length="162.62" shape="492.06,0.00 646.00,0.00"/>
+        <lane id="seg6_2" index="2" disallow="pedestrian" speed="29.06" length="162.62" shape="492.06,3.20 646.00,3.20"/>
+    </edge>
+    <edge id="seg7" from="node7" to="node8" priority="1" spreadType="center">
+        <lane id="seg7_0" index="0" disallow="pedestrian" speed="29.06" length="100.00" shape="654.00,-1.60 750.00,-1.60"/>
+        <lane id="seg7_1" index="1" disallow="pedestrian" speed="29.06" length="100.00" shape="654.00,1.60 750.00,1.60"/>
+    </edge>
+    <edge id="seg8" from="node8" to="node9" priority="1" spreadType="center">
+        <lane id="seg8_0" index="0" disallow="pedestrian" speed="29.06" length="100.00" shape="750.00,-1.60 850.00,-1.60"/>
+        <lane id="seg8_1" index="1" disallow="pedestrian" speed="29.06" length="100.00" shape="750.00,1.60 850.00,1.60"/>
+    </edge>
+    <edge id="seg9" from="node10" to="node11" priority="1" spreadType="center">
+        <lane id="seg9_0" index="0" disallow="pedestrian" speed="17.88" length="100.00" shape="333.81,-54.83 428.78,-23.50"/>
+    </edge>
+
+    <tlLogic id="node11" type="static" programID="0" offset="0">
+        <phase duration="1"  state="r"/>
+        <phase duration="1"  state="G"/>
+    </tlLogic>
+
+    <junction id="node1" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,3.20 0.00,-3.20" customShape="1"/>
+    <junction id="node10" type="dead_end" x="333.81" y="-54.83" incLanes="" intLanes="" shape="333.31,-53.31 334.31,-56.35"/>
+    <junction id="node11" type="traffic_light" x="428.78" y="-23.50" incLanes="seg9_0" intLanes="" shape="428.28,-21.98 429.28,-25.02 428.28,-21.98">
+        <request index="0" response="0" foes="0"/>
+    </junction>
+    <junction id="node2" type="priority" x="100.00" y="0.00" incLanes="seg1_0 seg1_1" intLanes="" shape="100.00,3.20 100.00,-3.20 100.00,3.20">
+        <request index="0" response="00" foes="00"/>
+        <request index="1" response="00" foes="00"/>
+    </junction>
+    <junction id="node3" type="priority" x="200.00" y="0.00" incLanes="seg2_0 seg2_1" intLanes="" shape="200.00,3.20 200.00,-3.20 200.00,3.20">
+        <request index="0" response="00" foes="00"/>
+        <request index="1" response="00" foes="00"/>
+    </junction>
+    <junction id="node4" type="priority" x="300.00" y="0.00" incLanes="seg3_0 seg3_1" intLanes="" shape="300.00,3.20 300.00,-3.20 300.00,3.20">
+        <request index="0" response="00" foes="00"/>
+        <request index="1" response="00" foes="00"/>
+    </junction>
+    <junction id="node5" type="priority" x="400.00" y="0.00" incLanes="seg4_0 seg4_1" intLanes="" shape="400.00,3.20 400.00,-3.20 400.00,3.20">
+        <request index="0" response="00" foes="00"/>
+        <request index="1" response="00" foes="00"/>
+    </junction>
+    <junction id="node6" type="priority" x="500.00" y="0.00" incLanes="seg10_0 seg5_0 seg5_1" intLanes="" shape="492.06,4.80 492.06,-4.80 489.29,-5.03 488.35,-5.31 487.42,-5.69 486.29,-6.16 484.77,-6.71 483.77,-3.67 483.70,-3.20 483.70,3.20 486.81,3.61 488.94,4.39 490.26,4.68">
+        <request index="0" response="000" foes="000"/>
+        <request index="1" response="000" foes="000"/>
+        <request index="2" response="000" foes="000"/>
+    </junction>
+    <junction id="node7" type="priority" x="650.00" y="0.00" incLanes="seg6_0 seg6_1 seg6_2" intLanes="" shape="654.00,3.20 654.00,-3.20 651.02,-3.61 648.98,-4.39 647.73,-4.68 646.00,-4.80 646.00,4.80 648.98,4.39 651.02,3.61 652.27,3.32">
+        <request index="0" response="010" foes="010"/>
+        <request index="1" response="000" foes="001"/>
+        <request index="2" response="000" foes="000"/>
+    </junction>
+    <junction id="node8" type="priority" x="750.00" y="0.00" incLanes="seg7_0 seg7_1" intLanes="" shape="750.00,3.20 750.00,-3.20 750.00,3.20">
+        <request index="0" response="00" foes="00"/>
+        <request index="1" response="00" foes="00"/>
+    </junction>
+    <junction id="node9" type="dead_end" x="850.00" y="0.00" incLanes="seg8_0 seg8_1" intLanes="" shape="850.00,-3.20 850.00,3.20"/>
+
+    <connection from="seg1" to="seg2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="seg1" to="seg2" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from="seg10" to="seg6" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="seg2" to="seg3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="seg2" to="seg3" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from="seg3" to="seg4" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="seg3" to="seg4" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from="seg4" to="seg5" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="seg4" to="seg5" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from="seg5" to="seg6" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from="seg5" to="seg6" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from="seg6" to="seg7" fromLane="0" toLane="0" dir="s" state="m"/>
+    <connection from="seg6" to="seg7" fromLane="1" toLane="0" dir="s" state="M"/>
+    <connection from="seg6" to="seg7" fromLane="2" toLane="1" dir="s" state="M"/>
+    <connection from="seg7" to="seg8" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="seg7" to="seg8" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from="seg9" to="seg10" fromLane="0" toLane="0" tl="node11" linkIndex="0" dir="s" state="O"/>
+
+</net>

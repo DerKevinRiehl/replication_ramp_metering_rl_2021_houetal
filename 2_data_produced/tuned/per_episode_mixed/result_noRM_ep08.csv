@@ -1,0 +1,2 @@
+throughput_veh_h,speed_m_s,stops_per_vehicle,fuel_mpg,co2_g_mi,nox_mg_mi,controller,episode,mode
+3743.8561438561437,10.811897601394694,1.2611940298507462,17.20199284077274,528.2005000336095,216.42594871261494,noRM,8,mixed

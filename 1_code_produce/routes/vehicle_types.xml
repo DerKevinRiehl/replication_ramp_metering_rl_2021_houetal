@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- emissionClass set explicitly to match the paper:
+         "The energy and emission model used in this study is the default
+          emission model in SUMO, namely HBEFA3/PC_G_EU4." (Hou et al. 2021)
+         This is also SUMO's default — written out here for reproducibility. -->
+    <vType id="car" vClass="passenger"
+        maxSpeed="29.06"
+        emissionClass="HBEFA3/PC_G_EU4"/>
+
+</routes>
