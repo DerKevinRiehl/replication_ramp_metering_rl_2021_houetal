@@ -1,0 +1,30 @@
+The original work \textit{“A Cyber-Physical System for Freeway Ramp Meter Signal Control Using Deep Reinforcement Learning in a Connected Environment”} 
+by Hou et al. \cite{hou2021rampmeter} investigates the application of deep reinforcement learning to freeway ramp metering control. The study compares 
+three conventional baseline controllers — no ramp metering, a fixed-time controller, and ALINEA — with three deep RL algorithms, namely Ape-X DQN \cite{horgan2018distributed}, PPO \cite{schulman2017ppo}, 
+and A3C \cite{mnih2016a3c} on a freeway network consisting of a two-lane mainline and a single-lane merging on-ramp.
+
+The objective of the proposed controllers is to improve mobility and environmental efficiency under different traffic conditions. 
+To evaluate controller performance, the study considers six different metrics that degrade under congestion.
+
+\medskip
+\begin{itemize}[label=\textbullet, nosep, leftmargin=1.5em]
+    \item \textbf{Operational Efficiency}
+    \begin{itemize}[label=$\circ$, nosep]
+        \item Traffic throughput (vph)
+        \item Average vehicle speed (m/s)
+        \item Average number of stops per vehicle
+    \end{itemize}
+    \item \textbf{Environmental Impact}
+    \begin{itemize}[label=$\circ$, nosep]
+        \item Average vehicle fuel efficiency (mpg)
+        \item Average CO\textsubscript{2} emissions per vehicle (g/mi)
+        \item Average NO\textsubscript{x} emissions per vehicle (mg/mi)
+    \end{itemize}
+\end{itemize}
+\medskip
+
+The paper reports that the average performance of the deep RL policies is superior
+to each of the baseline controllers across all aforementioned metrics 
+in both mixed near-congested/congested and extremely congested traffic scenarios. 
+
+

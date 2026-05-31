@@ -1,0 +1,40 @@
+This paper presented a replication of the work by Hou et al.\ \cite{hou2021rampmeter},
+who applied reinforcement learning to freeway ramp metering signal control
+and compared it against three conventional controllers.
+The replication aimed to verify the claim that the reinforcement learning algorithms
+Ape-X DQN, PPO and A3C outperform the baseline controllers
+no ramp metering, fixed-time control and ALINEA
+under mixed near-congested/congested and extremely congested traffic conditions.
+
+\medskip
+
+After implementing the environment and controllers as described in the original paper,
+the obtained results did not match those reported by Hou et al.,
+particularly for the two metrics we consider most important, 
+traffic throughput and average vehicle speed.
+With a deviation of up to 13.03\% in average vehicle speed for the no ramp meter case (mixed traffic scenario),
+we tuned the simulation parameters empirically to bring the baseline values closer to the reported ones.
+
+\medskip
+
+With the tuned parameters, the deviation in average vehicle speed was reduced to at most 2.53\% and the deviation in traffic throughput to at most 10.19\%
+across the baseline controllers. The remaining metrics, however, still showed notable deviations
+and the claimed performance gains of the reinforcement learning controllers could not be observed, as
+all three RL algorithms achieved similar performance to the baselines in both the mixed and the extreme traffic scenario.
+The reward curves of the RL algorithms also did not converge to the values reported in the original paper.
+One observation that we can confirm is that the training of A3C was significantly slower
+than that of Ape-X DQN and PPO.
+
+\medskip
+
+Because the original paper does not specify the exact location and technical configuration of the measurements,
+several assumptions had to be made when implementing the evaluation metrics.
+
+\medskip
+
+Overall, the replication revealed that the results reported by Hou et al.\ could not be reproduced
+based on the information available in the original paper.
+The claimed performance gains of the reinforcement learning controllers
+over the baseline controllers could not be confirmed.
+A more complete specification of the simulation environment and the measurement procedure would be necessary to enable a fair and conclusive comparison
+between reinforcement-learning-based and classical ramp metering strategies.

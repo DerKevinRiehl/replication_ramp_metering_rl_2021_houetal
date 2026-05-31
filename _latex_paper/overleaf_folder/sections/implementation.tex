@@ -1,0 +1,39 @@
+
+\subsection{Simulation Network}
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\linewidth]{network/network_original_paper.png}
+    \caption{The simulated on-ramp merging area. Figure taken from \cite{hou2021rampmeter}.}
+    \label{fig:network}
+\end{figure}
+
+
+
+
+The simulation network consists of a two-lane freeway and a single-lane on-ramp merging into the mainline.
+The freeway is divided into eight segments (Seg. 1 - 8), each with a length of 100 m, except for the merging area (Seg. 6), which has an extended length of 150 m to enable smoother merging. 
+
+The on-ramp consists of additional segments, Seg. 9 and Seg. 10, with lengths of 100 m and 75 m, respectively. 
+The ramp meter traffic signal, which is regulated by the implemented control algorithms, is located between Seg. 9 and Seg. 10. 
+At Seg. 6, the network temporarily expands to three lanes as this is where the on-ramp lane gets merged into the freeway, before it tapers down to two lanes again. 
+
+\subsection{Episode Logic and Traffic Flow Generation}
+
+To obtain statistically meaningful results, all controllers were evaluated over 20 simulation episodes (using the microscopic traffic simulator SUMO together with the TraCI interface \cite{krajzewicz2012recent})
+and the reported metrics were averaged across all runs. Each episode consisted of 1000 simulation steps. Before the actual evaluation started, an additional warm-up phase of 40 
+simulation steps was introduced in order to establish realistic traffic conditions before measurements took place. 
+
+Two traffic scenarios were considered: mixed near-congested/congested traffic conditions and extremely congested traffic conditions. 
+Following the assumptions made in the original study, the bottleneck capacity of the network using the default SUMO vehicle parameters was estimated to be between 3600 and 3700 veh/h. 
+
+In the mixed traffic scenario, the freeway inflow was sampled from a Gaussian distribution $\mathcal{N}(3000, 300)$ veh/h and then clipped to the interval $[0, 3900]$ veh/h. Similarly, the on-ramp inflow was generated independently from $\mathcal{N}(900, 300)$ veh/h and clipped to $[0, 1500]$ veh/h.  
+In the extremely congested traffic scenario, the freeway inflow was fixed at $3900$ veh/h, while the on-ramp inflow followed the same distribution as in the mixed traffic scenario, namely $\mathcal{N}(900, 300)$ veh/h clipped to the interval $[0, 1500]$ veh/h.
+
+To evaluate the controllers under varying traffic conditions, the traffic inflow on both the freeway and the on-ramp was updated every 100 simulation steps according to the above distributions. 
+
+
+\subsection{Emission and Energy Model}
+
+For measuring the three metrics average vehicle fuel efficiency (mpg), average CO$_2$ emissions per vehicle (g/mi) and average NO$_x$ emissions per vehicle (mg/mi), the default emission model in SUMO \cite{krajzewicz2014sumo} was used, as specified in the original paper. 

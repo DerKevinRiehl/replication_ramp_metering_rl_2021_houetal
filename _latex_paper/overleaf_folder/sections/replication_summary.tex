@@ -1,0 +1,40 @@
+
+A replication of \textit{"A Cyber-Physical System for Freeway Ramp Meter Signal Control Using Deep Reinforcement Learning in a Connected Environment"} from Hou
+et al. (2021), published in the \textit{2021 IEEE Intelligent Transportation Systems Conference (ITSC)},
+Indianapolis, USA, September 19--21, 2021.
+
+\section*{Replication Summary}
+
+\textbf{Scope of Replication} --- 
+The objective of this work is to reproduce the results of the reference study \cite{hou2021rampmeter} and verify the claim that the reinforcement learning algorithms Ape-X DQN, PPO and A3C 
+show superior performance for freeway ramp meter signal control in the metrics traffic throughput, vehicle speed, number of stops per vehicle, fuel efficiency per vehicle and per-vehicle emission rates for CO$_2$ and NO$_x$ 
+than the given baseline controllers no ramp meter, fixed-time controller and ALINEA in both mixed near-congested/congested traffic situations and extremely congested traffic situations. 
+Furthermore, we aim to confirm that PPO shows better results in all of the aforementioned assessment criteria than the other reinforcement learning algorithms, while showing a convergence trend similar to Ape-X DQN and one that is approximately 15 times faster than A3C. 
+To achieve this, we implemented a simulation environment in Python, together with the three baseline controllers (no ramp meter, fixed-time control and ALINEA) and the three RL-based controllers (Ape-X DQN, PPO and A3C), which we subsequently used to compare our obtained results with the original claims. 
+
+\vspace{1em}
+
+\textbf{Methodology} --- 
+Since the authors of the reproduced study did not provide any source code, the modelling of the environment, the route generation, the network, 
+the reward function, the state computation, the three baseline controllers, the three reinforcement learning algorithms and also the training and evaluation scripts were implemented from scratch
+based on the paper description. For Ape-X DQN, PPO and A3C we made use of the reinforcement learning library RLlib \cite{liang2018rllib} to remain consistent with the original study and the microscopic traffic simulations were conducted using the SUMO software (Simulation of Urban Mobility) together with TraCI (Traffic Control Interface) \cite{krajzewicz2012recent}.
+
+
+\vspace{1em}
+
+\textbf{Results} --- 
+Our replication findings do not match the original work from \cite{hou2021rampmeter}. With their described parameters, the baseline controllers (no ramp meter, fixed-time ramp meter and ALINEA)
+already showed notable deviations in the evaluation metrics. Furthermore, the hypothesis that the reinforcement learning policies outperform the baseline controllers could not be reproduced. 
+Moreover, we were not able to provide evidence that PPO surpasses Ape-X DQN and A3C in our measurements. However, we can confirm that PPO converges at a similar rate as Ape-X DQN and that A3C takes significantly longer.  
+
+
+\vspace{1em}
+
+\textbf{What was easy} --- 
+The implementation of the three baseline-feedback controllers (no ramp meter, fixed-time controller and ALINEA) was straightforward, especially no ramp meter and fixed-time controller. 
+The reason for this is that the paper provided both formulas and parameter values for ALINEA, while also specifying the cycle length for the fixed-time controller. 
+
+\vspace{1em}
+
+\textbf{What was difficult} --- 
+Implementing the environment with all its details required significant effort. 

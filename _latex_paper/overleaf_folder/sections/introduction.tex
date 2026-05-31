@@ -1,0 +1,177 @@
+% paragraph 1: urbanization and increasing traffic congestion
+% paragraph 2: Classical ramp metering methods
+% paragraph 3: learning based / intelligent based traffic control
+% paragraph 4: Bridge to Tech with RL and Applications
+% paragraph 5: RL
+%
+%
+%
+%
+%
+%
+% source un2018urbanizationnews: "68% of the world population is projected to live in urban areas by 2050" and "Urbanization and population growth could add another 2.5 billion people to urban areas by 2050"
+% --> 1
+%
+% source chin2002temporary: "Traffic congestion and its impacts significantly affect the nation's economic performance and the public's quality of life"
+% "in most urban areas, travel demand routinely exceeds highway capacity during peak periods"
+% "Events such as crashes, vehicle breakdowns, work zones, adverse weather, and sub-optimal signal timing cause temporary capacity losses."
+% --> 1
+%
+% source papageorgiou1997alinea:
+% ALINEA is a local feedback ramp-metering strategy
+% "The reported results indicate easy application, flexibility, and high efficiency of ALINEA."
+% --> 2
+%
+% source yu2012genetic
+% "Ramp metering is one of the most common solutions for improving motorway traffic flows."
+% "Fuzzy logic based ramp metering algorithms are considered to be an effective control measure to handle a complex nonlinear traffic system."
+% --> 2
+%
+%
+% source ghods2009adaptive,
+% "Ramp metering is the most widely used type of freeway traffic control."
+% "Ramp metering, speed limits, and route recommendation are recognized as the most effective ways to relieve freeway traffic congestion.
+% -->2
+%
+%
+% source liang2009pid,
+% "BP neural network is used to adjust the PID parameters dynamically."
+% kann man verwenden: "Researchers also explored neural-network-based adaptive ramp metering approaches to dynamically regulate freeway traffic density [X]."
+% --> 2 / 3
+%
+% source liang2010single,
+% "A single neuron based traffic density controller is designed."
+% "This method can effectively deal with this class of control problem."
+% "It has good dynamic and steady-state performance, and can achieve an almost perfect tracking performance."
+% kann man verwenden: "Neural-network-based approaches were also explored to dynamically regulate freeway traffic density and improve traffic stability [X]."
+% --> 3
+%
+% source liang2009feedback,
+% "This system can eliminate traffic congestion and maintain traffic flow stability."
+% --> 3
+%
+%
+% source qi2008feedback,
+% Ramp metering is the most widely used control measure."
+% "Neuron adaptive control algorithms are applied to tune the rate of metering on-line in real time."
+% "Compared to traditional feedback ramp metering, these methods have stronger robustness and better control precision.
+% --> 3
+%
+%
+% source hegyi2005model,
+% The use of dynamic speed limits significantly reduces congestion and results in a lower total time spent."
+% --> 2
+%
+%
+% source of feng2011fuzzy,
+% Based on fuzzy metering and neural network theories…"
+% "A five-layer Fuzzy Neural Network (FNN) model…"
+% "Ramp metering rate as output variable…"
+% --> 3
+%
+% source of sdot_connected_vehicle
+% https://www.transportation.gov/briefing-room/us-dot-advances-deployment-connected-vehicle-technology-prevent-hundreds-thousands
+% --> übergang zu RL, absatz 4
+%
+%
+%
+% Application in Games: mnih2013atari, silver2016go, silver2017go
+% Applciation in Robotis: kober2013survey, polydoros2017survey
+% Application in power systems: xu2019joint, zhang2020restoring
+% Application in optimal building operation: zhang2021grid, zhang2020edge
+% --> 4 --> Rl has achieved strong performance in many complex decision making domains
+%
+% Application in traffic signal control systems:
+% sources eltantawy2010agent, jin2019multi, prashanth2011reinforcement, eltantawy2013multiagent, aslani2017adaptive,,
+%
+% Application in autonomous vehicles:
+% sources: sallab2017deep, hoel2018automated, chae2017autonomous, ye2019automated, yu2020distributed, zhou2019efficient
+%
+%
+% Applciation in speed limit control:
+% sources wu2018differential, wu2019esctc
+%
+% Applciations in dynamic pricing of road usage:
+% sources pandey2018multiagent, pandey2020pricing,
+%
+%
+% source rezaee2014decentralized
+% Dynamic traffic control measures provide a set of cost effective congestion mitigation solutions, among which ramp metering (RM) is the most effective approach. --> 1/2
+% "The control system is based on reinforcement learning (RL)."
+% "The proposed coordinated RM algorithm … significantly outperformed approaches based on the well-known ALINEA RM algorithm."
+% "Resulted in 50% reduction in total travel time when applied to the Gardiner Model."
+% --> 5
+%
+%
+% source fares2014freeway,
+% they use reinforcement learning control agents to freeway ramp metering
+% --> 5
+%
+% source belletti2018expert,
+% achieves state of the art performance or even outperforms it
+%
+% source watkins1992qlearning
+% math behind Q learning
+%
+% source ummery1994online,
+% math behind Q learning
+%
+%
+% source konda2000actorcritic
+% actor critic (PPO and A3C)
+%
+% source chulman2017ppo
+% PPO
+%
+% source mnih2016a3c
+% A3C
+%
+% source horgan2018distributed
+% Ape-X DQN
+%
+% source wu2017flow
+% Flow
+%
+% source krajzewicz2012recent
+% SUMO
+%
+% source liang2018rllib
+% RLlib
+%
+% source krajzewicz2014sumo
+% SUMO emission model
+%
+%
+% ---
+%
+%
+% Text:
+
+
+With the increase of urbanization and global population growth, cities are expected to house an additional 2.5 billion people by 2050 \cite{un2018urbanizationnews}.
+This rising number of people in cities will inevitably result in higher traffic demand in metropolitan areas. Generally, travel demand surpasses
+road capacity on a regular basis, especially with poorly coordinated traffic signal phases, and the resulting congestion negatively impacts not only a nation's economy, but also the individual's quality of life \cite{chin2002temporary}.
+
+Freeway bottlenecks, particularly on-ramp merging areas, represent one of the major causes of congestion in urban transportation
+networks \cite{chin2002temporary}.
+To address this issue, ramp metering strategies have been widely adopted to regulate the flow of vehicles entering freeways and maintain stable
+traffic conditions, where the red-to-green cycles are driven by a control algorithm \cite{yu2012genetic, ghods2009adaptive}.
+Classical approaches that have been introduced in the literature include fixed-time controllers, feedback-based methods such as ALINEA \cite{papageorgiou1997alinea},
+fuzzy-control \cite{yu2012genetic, ghods2009adaptive}, neural-network-based approaches \cite{liang2009pid, liang2010single, liang2009feedback, qi2008feedback},
+model-based predictive controllers \cite{hegyi2005model} as well as techniques combining multiple control paradigms \cite{feng2011fuzzy}.
+
+However, freeway traffic systems remain highly dynamic, stochastic and nonlinear, making it difficult for traditional control methods to generalize across varying traffic conditions.
+In recent years, reinforcement learning (RL) has demonstrated impressive performance in solving complex decision-making problems through direct interaction with an environment.
+These domains range from playing games \cite{mnih2013atari, silver2016go, silver2017go} to robotics \cite{kober2013survey, polydoros2017survey} as well as fields like energy systems \cite{xu2019joint, zhang2020restoring}
+and intelligent infrastructure management \cite{zhang2021grid, zhang2020edge}.
+Encouraged by these successes, RL has increasingly been adopted in mobility applications such as traffic signal systems \cite{eltantawy2010agent, jin2019multi, prashanth2011reinforcement, eltantawy2013multiagent, aslani2017adaptive},
+decision making in autonomous vehicles \cite{sallab2017deep, hoel2018automated, chae2017autonomous, ye2019automated, yu2020distributed, zhou2019efficient},
+dynamic speed regulation \cite{wu2018differential, wu2019esctc}
+and adaptive road pricing strategies \cite{pandey2018multiagent, pandey2020pricing}.
+
+Recently, several studies have also investigated the use of RL for freeway ramp metering control \cite{fares2014freeway, belletti2018expert}. For instance, Rezaee et al. \cite{rezaee2014decentralized} proposed an
+RL-based approach that outperformed the widely used ALINEA controller.
+
+Building upon these developments, this work is a reproduction study of the paper by Hou et al. \cite{hou2021rampmeter}, in which three different RL algorithms are applied
+to the problem of freeway ramp metering control and compared to three baseline controllers.
+

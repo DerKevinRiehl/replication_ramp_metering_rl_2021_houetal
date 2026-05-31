@@ -1,0 +1,33 @@
+
+\medskip
+An initial difficulty in reproducing the study was the lack of a clear specification of how and where the measurements were conducted, which significantly complicated the reproduction process and may explain deviations from the original results.
+After empirical testing, we adopted the following measurement scheme: traffic throughput was measured locally at Seg. 7 (the first segment downstream of the bottleneck) and the average vehicle speed locally at Seg. 6 (the merging area), while the number of stops per vehicle (with a stop threshold of 1\,m/s), fuel efficiency, CO$_2$ emissions and NO$_x$ emissions were aggregated globally across all vehicles and segments.
+
+\medskip
+Another major challenge in reproducing the work by \cite{hou2021rampmeter} was identifying the right vehicle parameters and controller settings in order to more closely match the
+traffic throughput and speed values reported in the original paper, as the proposed default SUMO vehicle parameters did not yield results consistent with those described in their paper.
+
+\medskip
+Additionally, for inflow values sampled from the Gaussian distributions, the generated values were clipped by setting the lower bound to 0. After extensive debugging, it was
+discovered that SUMO does not allow an inflow value of 0, which caused the episode to terminate immediately and consequently no result file to be written for that episode.
+Initially, this skewed the measurement results, as only 19 out of 20 episodes actually contributed to the evaluation metrics.
+This issue could have been considered by the original authors in order to ensure a more robust setup.
+
+\medskip
+Moreover, in the network definition, the lengths of segments ending in a junction are automatically reduced by SUMO, as part of the segment is merged into the junction area.
+This behaviour was not taken into account by the paper, although additional details regarding whether and how this issue was handled could have been useful for the reproduction of their study.
+
+\medskip
+Furthermore, the claim that only one car can pass the merging area per green phase in the fixed-time controller is not possible to implement, as the traffic signal state cannot be modified during the traci.simulationStep() function in SUMO.
+
+
+\medskip
+In addition, the training of PPO took significantly longer than reported in the original paper, requiring approximately twice the reported 5 wall-clock hours to reach 20 million training steps.
+This was observed even though all non-essential computations and logging within the environment were disabled to reduce the computational overhead and save resources, which was not further specified by the original authors.
+Although 32 CPUs were used for training, as stated in the paper, the difference in training times may stem from the fact that the exact hardware details used by Hou et al. were not disclosed.
+
+\medskip
+The speedmap visualizations in the original paper do not specify the bin size used for aggregating vehicle speeds along the freeway, which makes it difficult to assess the level of detail of the plots and to reproduce them accurately.
+
+\medskip
+Finally, the original paper does not report the absolute performance values of the baseline controllers directly. Instead, they had to be back-calculated from the percentage changes given in Tables I and II, which is unnecessarily cumbersome.
